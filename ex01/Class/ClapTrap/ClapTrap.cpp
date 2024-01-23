@@ -14,14 +14,14 @@
   SetClapTrapHitpoint(10);
   SetClapTrapEnergypoint(10);
   SetClapTrapAttackdamage(0);
-  std::cout << "ClapTrap " << name << " constructed." << std::endl;
+  std::cout << "ClapTrap " << name << " constructed" << std::endl;
   return ;
 }
 
                     ClapTrap::ClapTrap(const ClapTrap& src)
 {
   *this = src;
-  std::cout << "ClapTrap" << this->GetClapTrapName() << " copied." << std::endl;
+  std::cout << "ClapTrap" << this->GetClapTrapName() << " copied" << std::endl;
   return ;
 }
 
@@ -58,7 +58,6 @@ void                ClapTrap::SetClapTrapAttackdamage(int amount)
   this->Attackdamage = amount;
   return ;
 }
-
 // ----------Getters----------
 
 const std::string&  ClapTrap::GetClapTrapName(void) const
@@ -100,7 +99,7 @@ void                ClapTrap::attack(const std::string& target)
   if(this->GetClapTrapEnergypoint() > 0)
   {
     std::cout << "ClapTrap " << this->GetClapTrapName() << " attack " << target << ", causing " << this->GetClapTrapAttackdamage() << " points of damage!" << std::endl;
-    this->SetClapTrapEnergypoint(this->GetClapTrapEnergypoint() - 1);
+    this->SetClapTrapEnergypoint(this->Energypoint--);
   }
   else
     std::cout << "ClapTrap " << this->GetClapTrapName() << " has no Energypoint left." << std::endl;
@@ -111,7 +110,7 @@ void                ClapTrap::takeDamage(unsigned int amount)
 {
   if(this->GetClapTrapHitpoint() > 0)
   {
-    std::cout << "ClapTrap " << this-> GetClapTrapName() << " take " << amount << " point(s) of damage." << std::endl;
+    std::cout << "ClapTrap " <<this-> GetClapTrapName() << " take " << amount << " point(s) of damage." << std::endl;
     this->SetClapTrapHitpoint(this->Hitpoint - amount);
   }
   else
