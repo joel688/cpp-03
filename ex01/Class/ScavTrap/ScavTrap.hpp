@@ -8,11 +8,11 @@
 class ScavTrap : public ClapTrap
 {
   public:
-                ScavTrap();
-                ScavTrap(std::string Name);
-                ~ScavTrap();
-                ScavTrap(const ScavTrap& src);
-    ScavTrap&   operator=(const ScavTrap& src);
+                          ScavTrap();
+                          ScavTrap(std::string Name);
+                          ~ScavTrap();
+                          ScavTrap(const ScavTrap& src);
+    ScavTrap&             operator=(const ScavTrap& src);
     void                  SetScavTrapName(std::string name);
     void                  SetScavTrapHitpoint(int amount);
     void                  SetScavTrapEnergypoint(int amount);
@@ -22,7 +22,7 @@ class ScavTrap : public ClapTrap
     const unsigned int&   GetScavTrapEnergypoint(void) const;
     const unsigned int&   GetScavTrapAttackdamage(void) const;
     void        attack(const std::string& target);
-    void        guardGate();
+    void        guardGate(void);
 };
 
 #endif
